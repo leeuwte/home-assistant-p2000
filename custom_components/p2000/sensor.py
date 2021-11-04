@@ -4,14 +4,13 @@ import json
 
 import voluptuous as vol
 
-from homeassistant.components.sensor import PLATFORM_SCHEMA
+from homeassistant.components.sensor import PLATFORM_SCHEMA, SensorEntity
 from homeassistant.const import (CONF_NAME)
 import homeassistant.helpers.config_validation as cv
-from homeassistant.helpers.entity import Entity
 
 """Start the logger"""
 _LOGGER = logging.getLogger(__name__)
-
+ 
 DEFAULT_NAME = "p2000"
 CONF_GEMEENTEN = "gemeenten"
 CONF_CAPCODES = "capcodes"
@@ -23,7 +22,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 })
 
 
-def setup_platform(hass, config, add_devices, discovery_info=None):
+def setup_platform(hass, config, add_entities, discovery_info=None):
     """Setup the sensor platform."""
 
     name = config.get(CONF_NAME)
@@ -37,17 +36,17 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
 
     api = P2000Api()
 
-    add_devices([P2000Sensor(api, name, filter)])
+    add_entities([P2000Sensor(api, name, filter)])
 
 
-class P2000Sensor(Entity):
+class P2000Sensor(SensorEntity):
     """Representation of a Sensor."""
 
     def __init__(self, api, name, filter):
+        """Initialize the sensor."""
         self.api = api
         self.attributes = {}
         self.filter = filter
-        """Initialize the sensor."""
         self._name = name
         self._state = None
 
