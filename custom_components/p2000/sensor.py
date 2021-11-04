@@ -80,7 +80,7 @@ class P2000Sensor(Entity):
 
 
 class P2000Api:
-    url = "http://beta.alarmeringdroid.nl/api2/find/"
+    url = "https://beta.alarmeringdroid.nl/api2/find/"
 
     def __init__(self):
         self.session = requests.Session()
@@ -92,7 +92,10 @@ class P2000Api:
         response = self.session.get(self.url + json.dumps(query),
                                     params={},
                                     allow_redirects=False)
+
         if response.status_code != 200:
             raise RuntimeError("Request failed: %s", response)
+
         data = json.loads(response.content.decode('utf-8'))
+        
         return data['meldingen'][0]
