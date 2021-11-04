@@ -1,6 +1,7 @@
 {
   "domain": "p2000",
   "name": "P2000 Sensor",
+  "config_flow": true,
   "documentation": "",
   "dependencies": [],
   "codeowners": ["@leeuwte"],
