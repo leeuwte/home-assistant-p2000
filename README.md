@@ -37,3 +37,47 @@ The id is unique and changes with every new p2000 message.
 Extracting data can be done with a template like:
 
 `{{ state_attr('sensor.p2000_zwolle', 'melding') }}`
+
+More information on your dashboard.
+
+```
+type: markdown
+content: >
+  Datum : {{ state_attr('sensor.p2000', 'datum' ) }}   Tijd: {{
+  state_attr('sensor.p2000', 'tijd') }}
+
+
+  Melding : {{ state_attr('sensor.p2000', 'melding') }}<br>
+
+
+  {{ state_attr('sensor.p2000', 'tekstmelding') }}<br>
+
+  -
+
+  Plaats: {{ state_attr('sensor.p2000', 'plaats') }}
+
+  Straat : {{ state_attr('sensor.p2000', 'straat') }} 
+
+  Regio : {{ state_attr('sensor.p2000', 'regio') }}
+
+  capcode : {{ state_attr('sensor.p2000', 'capstring') }}
+
+  lat : {{ state_attr('sensor.p2000', 'latitude') }}  long: {{
+  state_attr('sensor.p2000', 'longitude') }}
+
+  <br>
+
+  Dienst: {{ state_attr('sensor.p2000', 'dienst') }}
+
+  info :  {{ state_attr('sensor.p2000', 'brandinfo') }}<br>
+
+  Regio id : {{ state_attr('sensor.p2000', 'regioid') }}       Dienst id : {{
+  state_attr('sensor.p2000', 'dienstid') }}
+
+  Prio : {{ state_attr('sensor.p2000', 'prio1') }}
+
+  Grip : {{ state_attr('sensor.p2000', 'grip') }}
+
+
+  Id nr : {{ state_attr('sensor.p2000', 'id') }}<br>
+```
