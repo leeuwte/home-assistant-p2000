@@ -20,9 +20,12 @@ class P2000Api:
 
         data = json.loads(response.content.decode('utf-8'))
         
+<<<<<<< HEAD
         if (len(data['meldingen']) == 0):
             return None;
 
+=======
+>>>>>>> 660367b92240d82be6f32711b6926cecb43333b4
         # Get the first melding, maybe extend it later for multiple messages.
         result = data['meldingen'][0]
 
