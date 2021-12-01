@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: ghcr.io/home-assistant/home-assistant:2021.11.5
+    volumes:
+      - ./testconfig:/config
+      - ./custom_components:/config/custom_components
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8123:8123
+

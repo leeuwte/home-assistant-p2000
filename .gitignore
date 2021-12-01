@@ -6,4 +6,3 @@ dev_test.py
 
 testconfig/
 .vscode
-docker-compose.yaml
