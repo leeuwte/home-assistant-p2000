@@ -22,7 +22,10 @@ sensor:
       - 1234567
 ```
 
-Either or 'gemeenten' or 'capcodes' should be filled.
+** Either or 'gemeenten' or 'capcodes' should be filled. **
+
+Be aware that if you use `gemeenten` and `capcodes` in the same config entry both one of the `gemeenten` and one of the `capcodes` should be in the `melding`
+
 
 You should get a sensor like te following with a lot of attributes.
 

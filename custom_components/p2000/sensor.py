@@ -74,6 +74,9 @@ class P2000Sensor(SensorEntity):
         """
         data = self.api.get_data(self.filter)
 
+        if (data == None):
+            return
+
         self.attributes = data
         self._state = data["id"]
 
