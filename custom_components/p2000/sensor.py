@@ -1,12 +1,12 @@
 import logging
-import requests
-import json
+
 
 import voluptuous as vol
 
 from homeassistant.components.sensor import PLATFORM_SCHEMA, SensorEntity
 from homeassistant.const import (CONF_NAME)
 import homeassistant.helpers.config_validation as cv
+from .api import P2000Api
 
 """Start the logger"""
 _LOGGER = logging.getLogger(__name__)
@@ -77,24 +77,3 @@ class P2000Sensor(SensorEntity):
         self.attributes = data
         self._state = data["id"]
 
-
-class P2000Api:
-    url = "https://beta.alarmeringdroid.nl/api2/find/"
-
-    def __init__(self):
-        self.session = requests.Session()
-
-    def get_data(self, filter):
-
-        query = filter
-
-        response = self.session.get(self.url + json.dumps(query),
-                                    params={},
-                                    allow_redirects=False)
-
-        if response.status_code != 200:
-            raise RuntimeError("Request failed: %s", response)
-
-        data = json.loads(response.content.decode('utf-8'))
-        
-        return data['meldingen'][0]
