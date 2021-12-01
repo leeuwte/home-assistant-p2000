@@ -3,3 +3,7 @@ __pycache__
 dev_test.py
 
 *.pyc
+
+testconfig/
+.vscode
+docker-compose.yaml
