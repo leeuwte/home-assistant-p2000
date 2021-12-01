@@ -6,7 +6,7 @@ import voluptuous as vol
 from homeassistant.components.sensor import PLATFORM_SCHEMA, SensorEntity
 from homeassistant.const import (CONF_NAME)
 import homeassistant.helpers.config_validation as cv
-from api import P2000Api
+from .api import P2000Api
 
 """Start the logger"""
 _LOGGER = logging.getLogger(__name__)
