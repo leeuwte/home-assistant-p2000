@@ -38,6 +38,7 @@ Extracting data can be done with a template like:
 
 `{{ state_attr('sensor.p2000_zwolle', 'melding') }}`
 
+----------------------------------------------------------------------------------
 ### lovelace Dashboard
 
 You need markdown and logbook for the following settings
@@ -87,6 +88,7 @@ content: >
 
   Id nr : {{ state_attr('sensor.p2000', 'id') }}<br>
 ```
+----------------------------------------------------------------------------------
 Also <br>
 ![afbeelding](https://user-images.githubusercontent.com/62996429/144427222-1118abfa-4710-4f48-962f-b9f89cd523bc.png)
 
