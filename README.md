@@ -38,9 +38,14 @@ Extracting data can be done with a template like:
 
 `{{ state_attr('sensor.p2000_zwolle', 'melding') }}`
 
+### lovelace Dashboard
+
+You need markdown and logbook for the following settings
+
 More information on your dashboard.<br> tekst in Dutch.<br>
 ![afbeelding](https://user-images.githubusercontent.com/62996429/144426649-70ec4732-14e1-4856-aa40-d8b81e99f3c3.png)
 
+#### markdown card
 ```
 type: markdown
 content: >
@@ -85,6 +90,7 @@ content: >
 Also <br>
 ![afbeelding](https://user-images.githubusercontent.com/62996429/144427222-1118abfa-4710-4f48-962f-b9f89cd523bc.png)
 
+#### logbook card
 ```
 type: logbook
 entities:
