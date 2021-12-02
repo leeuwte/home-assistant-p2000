@@ -38,7 +38,8 @@ Extracting data can be done with a template like:
 
 `{{ state_attr('sensor.p2000_zwolle', 'melding') }}`
 
-More information on your dashboard.
+More information on your dashboard.<br> tekst in Dutch.<br>
+![afbeelding](https://user-images.githubusercontent.com/62996429/144426649-70ec4732-14e1-4856-aa40-d8b81e99f3c3.png)
 
 ```
 type: markdown
@@ -80,4 +81,14 @@ content: >
 
 
   Id nr : {{ state_attr('sensor.p2000', 'id') }}<br>
+```
+Also <br>
+![afbeelding](https://user-images.githubusercontent.com/62996429/144427222-1118abfa-4710-4f48-962f-b9f89cd523bc.png)
+
+```
+type: logbook
+entities:
+  - sensor.p2000
+hours_to_show: 24
+title: '112'
 ```
