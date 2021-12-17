@@ -1,5 +1,3 @@
-!! NOTE this sensor is still in development !!
-
 # P2000 Sensor
 
 This is a simple p2000 sensor for home assistant
