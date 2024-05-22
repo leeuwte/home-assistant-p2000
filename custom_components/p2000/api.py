@@ -7,11 +7,9 @@ class P2000Api:
     def __init__(self):
         self.session = requests.Session()
 
-    def get_data(self, filter):
+    def get_data(self, apiFilter):
 
-        query = filter
-        
-        response = self.session.get(self.url + json.dumps(query),
+        response = self.session.get(self.url + json.dumps(apiFilter),
                                     params={},
                                     allow_redirects=False)
 
@@ -25,6 +23,10 @@ class P2000Api:
 
         # Get the first melding, maybe extend it later for multiple messages.
         result = data['meldingen'][0]
+
+        if (result == None):
+            return None
+
 
         # Rename lat & lon
         result["latitude"] =  result.get("lat", None)
