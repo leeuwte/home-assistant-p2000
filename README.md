@@ -18,11 +18,60 @@ sensor:
       - zwolle
     capcodes:
       - 1234567
-```
+    diensten:
+      - 2
+    woonplaatsen:
+      - zwolle
+    regios:
+      - 17
+    prio1: true
+    lifeliners: true
 
-** Either or 'gemeenten' or 'capcodes' should be filled. **
 
-Be aware that if you use `gemeenten` and `capcodes` in the same config entry both one of the `gemeenten` and one of the `capcodes` should be in the `melding`
+
+When applying multiple properties all will be applied as filter!
+
+###  regios (Veiligheidsregios)
+
+1: Amsterdam-Amstelland
+2: Groningen
+3: Noord- en Oost Gelderland
+4: Zaanstreek-Waterland
+5: Hollands Midden
+6: Brabant Noord
+7: Friesland
+8: Gelderland-Midden
+9: Kennemerland
+10: Rotterdam-Rijnmond
+11: Brabant Zuid-Oost
+12: Drenthe
+13: Gelderland-Zuid
+14: Zuid-Holland Zuid
+15: Limburg-Noord
+17: IJsselland
+18: Utrecht
+19: Gooi en Vechtstreek
+20: Zeeland
+21: Limburg-Zuid
+23: Twente
+24: Noord-Holland Noord
+25: Haaglanden
+26: Midden- en West Brabant
+27: Flevoland
+
+## diensten
+
+1: Politie
+2: Brandweer
+3: Ambulance
+4: KNRM
+5: Lifeliner
+7: DARES
+
+## lifeliners
+
+If `true`; All notifications, regardless of the region
+
 
 
 You should get a sensor like te following with a lot of attributes.
