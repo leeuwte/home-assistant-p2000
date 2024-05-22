@@ -13,26 +13,39 @@ Add the following to your `configuration.yaml` file:
 # Example configuration.yaml entry
 sensor:
   - platform: p2000
-    name: p2000_Zwolle
+    name: Brandweer
+    icon: mdi:fire-truck
     gemeenten:
-      - zwolle
-    capcodes:
-      - 1234567
+      - Zwolle
     diensten:
       - 2
-    woonplaatsen:
-      - zwolle
+
+  - platform: p2000
+    icon: mdi:ambulance
+    name: Ambulance
+    gemeenten:
+      - Zwolle
+    diensten:
+      - 3
+
+  - platform: p2000
+    name: IJsselland
     regios:
       - 17
-    prio1: true
-    lifeliners: true
 
+  # Only prio1 of region 17
+  - platform: p2000
+    name: IJsselland Prio1
+    prio1: true
+    regios:
+      - 17
+```
 
 
 When applying multiple properties all will be applied as filter!
 
 ###  regios (Veiligheidsregios)
-
+```
 1: Amsterdam-Amstelland
 2: Groningen
 3: Noord- en Oost Gelderland
@@ -58,20 +71,20 @@ When applying multiple properties all will be applied as filter!
 25: Haaglanden
 26: Midden- en West Brabant
 27: Flevoland
-
+```
 ## diensten
-
+```
 1: Politie
 2: Brandweer
 3: Ambulance
 4: KNRM
 5: Lifeliner
 7: DARES
-
+```
 ## lifeliners
-
+```
 If `true`; All notifications, regardless of the region
-
+```
 
 
 You should get a sensor like te following with a lot of attributes.
