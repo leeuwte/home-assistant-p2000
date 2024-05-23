@@ -13,16 +13,78 @@ Add the following to your `configuration.yaml` file:
 # Example configuration.yaml entry
 sensor:
   - platform: p2000
-    name: p2000_Zwolle
+    name: Brandweer
+    icon: mdi:fire-truck
     gemeenten:
-      - zwolle
-    capcodes:
-      - 1234567
+      - Zwolle
+    diensten:
+      - 2
+
+  - platform: p2000
+    icon: mdi:ambulance
+    name: Ambulance
+    gemeenten:
+      - Zwolle
+    diensten:
+      - 3
+
+  - platform: p2000
+    name: IJsselland
+    regios:
+      - 17
+
+  # Only prio1 of region 17
+  - platform: p2000
+    name: IJsselland Prio1
+    prio1: true
+    regios:
+      - 17
 ```
 
-** Either or 'gemeenten' or 'capcodes' should be filled. **
 
-Be aware that if you use `gemeenten` and `capcodes` in the same config entry both one of the `gemeenten` and one of the `capcodes` should be in the `melding`
+When applying multiple properties all will be applied as filter!
+
+###  regios (Veiligheidsregios)
+```
+1: Amsterdam-Amstelland
+2: Groningen
+3: Noord- en Oost Gelderland
+4: Zaanstreek-Waterland
+5: Hollands Midden
+6: Brabant Noord
+7: Friesland
+8: Gelderland-Midden
+9: Kennemerland
+10: Rotterdam-Rijnmond
+11: Brabant Zuid-Oost
+12: Drenthe
+13: Gelderland-Zuid
+14: Zuid-Holland Zuid
+15: Limburg-Noord
+17: IJsselland
+18: Utrecht
+19: Gooi en Vechtstreek
+20: Zeeland
+21: Limburg-Zuid
+23: Twente
+24: Noord-Holland Noord
+25: Haaglanden
+26: Midden- en West Brabant
+27: Flevoland
+```
+## diensten
+```
+1: Politie
+2: Brandweer
+3: Ambulance
+4: KNRM
+5: Lifeliner
+7: DARES
+```
+## lifeliners
+```
+If `true`; All notifications, regardless of the region
+```
 
 
 You should get a sensor like te following with a lot of attributes.
